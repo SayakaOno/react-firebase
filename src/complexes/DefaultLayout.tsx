@@ -37,15 +37,13 @@ const FooterOuter = styled.div`
 const Footer: React.FC = () => {
   return (
     <FooterOuter>
-      <div className="ui-container">
-        Copyright &copy; Ginpei Takanashi
-      </div>
+      <div className="ui-container">Copyright &copy; Sayaka Ono</div>
     </FooterOuter>
   );
 };
 
 const MainOuter = styled.div.attrs({
-  className: 'ui-container',
+  className: 'ui-container'
 })`
   margin-top: 1rem;
   min-height: 50vh;
@@ -53,17 +51,15 @@ const MainOuter = styled.div.attrs({
 
 type Prop = React.ComponentPropsWithRef<'div'>;
 
-const DefaultLayout: React.FC<Prop> = (props) => {
+const DefaultLayout: React.FC<Prop> = props => {
   const { children, ...restProps } = props;
   return (
     <div {...restProps}>
       <Header />
-      <MainOuter>
-        {children}
-      </MainOuter>
-      <Footer/>
+      <MainOuter>{children}</MainOuter>
+      <Footer />
     </div>
   );
-}
+};
 
 export default DefaultLayout;
